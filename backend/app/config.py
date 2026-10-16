@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     
     # OpenRouter LLM Gateway
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
-    OPENROUTER_MODEL: str = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.3-70b-instruct:free")
+    OPENROUTER_MODEL: str = os.getenv("OPENROUTER_MODEL", "liquid/lfm-2.5-2.6b:free")
     OPENROUTER_BASE_URL: str = "https://openrouter.ai/api/v1"
     
     # Database

@@ -83,7 +83,8 @@ Provide a direct, grounded response citing relevant [Chunk X] references."""
             prompt=user_prompt,
             system_prompt=RAG_SYSTEM_PROMPT,
             model=model,
-            temperature=0.2
+            temperature=0.2,
+            task_type="chat"
         )
 
         content = response.get("content", "")

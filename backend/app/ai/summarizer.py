@@ -21,7 +21,8 @@ class DocumentSummarizer:
             prompt=user_prompt,
             system_prompt=SUMMARIZATION_SYSTEM_PROMPT,
             temperature=0.2,
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            task_type="summarize"
         )
 
         content = response.get("content", "{}")

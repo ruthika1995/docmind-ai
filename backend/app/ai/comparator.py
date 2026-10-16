@@ -40,7 +40,8 @@ Perform complete clause-by-clause comparison and risk audit now."""
             system_prompt=COMPARATOR_SYSTEM_PROMPT,
             temperature=0.1,
             max_tokens=3500,
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            task_type="compare"
         )
 
         content = response.get("content", "{}")

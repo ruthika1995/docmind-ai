@@ -21,7 +21,8 @@ class DocumentClassifier:
             prompt=user_prompt,
             system_prompt=CLASSIFIER_SYSTEM_PROMPT,
             temperature=0.1,
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            task_type="classify"
         )
         
         content = response.get("content", "{}")

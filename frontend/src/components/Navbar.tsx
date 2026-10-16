@@ -16,7 +16,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, health }) => {
-  const modelName = health?.openrouter?.active_model || 'meta-llama/llama-3.3-70b-instruct:free';
+  const modelName = health?.openrouter?.active_model || 'liquid/lfm-2.5-2.6b:free';
   const isHealthy = health?.status === 'healthy';
 
   return (

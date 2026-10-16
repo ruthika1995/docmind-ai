@@ -45,7 +45,8 @@ class DocumentExtractor:
             system_prompt=sys_prompt,
             temperature=0.1,
             max_tokens=3000,
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            task_type="extract"
         )
 
         content = response.get("content", "{}")
