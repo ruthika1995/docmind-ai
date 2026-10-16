@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: docmind-ai
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt"
+    startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: NODE_VERSION
+        value: 20.19.6
+      - key: PROJECT_NAME
+        value: "DocMind AI"
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: "meta-llama/llama-3.3-70b-instruct:free"
+      - key: DATABASE_URL
+        value: "sqlite:///./docmind.db"

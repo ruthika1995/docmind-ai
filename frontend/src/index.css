@@ -1,0 +1,266 @@
+/* ─── DocMind Precision Design System (Handcrafted Enterprise Tier) ─── */
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+  /* Refined Precision Surfaces (Eliminates AI cyan/blue tints) */
+  --dm-bg: #090a0f;
+  --dm-surface-0: #0d0f16;
+  --dm-surface-1: #131620;
+  --dm-surface-2: #191d2a;
+  --dm-surface-3: #222738;
+  --dm-surface-hover: #1e2230;
+  --dm-surface-sunken: #0b0c12;
+
+  /* Hairline Crisp Structural Borders */
+  --dm-border-hairline: rgba(255, 255, 255, 0.06);
+  --dm-border-subtle: rgba(255, 255, 255, 0.09);
+  --dm-border-strong: rgba(255, 255, 255, 0.16);
+  --dm-border-focus: #f8fafc;
+
+  /* Contrast Typographic Hierarchy */
+  --dm-text-1: #f8fafc;        /* Primary headers and active selections */
+  --dm-text-2: #d1d5db;        /* Primary body copy (never muddy gray) */
+  --dm-text-3: #9ca3af;        /* Secondary supporting context */
+  --dm-text-4: #6b7280;        /* Subtle timestamps, hashes, metadata */
+
+  /* Restrained Functional Accents (No decorative AI slop) */
+  --dm-accent: #ffffff;
+  --dm-emerald: #10b981;
+  --dm-emerald-bg: rgba(16, 185, 129, 0.09);
+  --dm-amber: #f59e0b;
+  --dm-amber-bg: rgba(245, 158, 11, 0.09);
+  --dm-rose: #f43f5e;
+  --dm-rose-bg: rgba(244, 63, 94, 0.09);
+  --dm-blue: #3b82f6;
+  --dm-blue-bg: rgba(59, 130, 246, 0.09);
+
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+
+  --transition-fast: 100ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--dm-bg);
+  color: var(--dm-text-2);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--dm-text-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* Precision Panels */
+.dm-panel {
+  background: var(--dm-surface-1);
+  border: 1px solid var(--dm-border-subtle);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast);
+}
+
+.dm-panel:hover {
+  border-color: var(--dm-border-strong);
+}
+
+/* Navigation & Segmented Tabs */
+.dm-nav-tab {
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--dm-text-3);
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.dm-nav-tab:hover {
+  color: var(--dm-text-1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dm-nav-tab.is-active {
+  color: var(--dm-text-1);
+  background: var(--dm-surface-2);
+  border: 1px solid var(--dm-border-strong);
+  font-weight: 600;
+}
+
+/* Buttons */
+.dm-btn {
+  font-family: var(--font-sans);
+  font-size: 0.815rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.dm-btn-primary {
+  background: #ffffff;
+  color: #0b0c12;
+  border-color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+.dm-btn-primary:hover {
+  background: #f1f5f9;
+  transform: translateY(-0.5px);
+}
+
+.dm-btn-secondary {
+  background: var(--dm-surface-2);
+  color: var(--dm-text-2);
+  border-color: var(--dm-border-subtle);
+}
+.dm-btn-secondary:hover {
+  background: var(--dm-surface-3);
+  color: var(--dm-text-1);
+  border-color: var(--dm-border-strong);
+}
+
+.dm-btn-danger {
+  background: var(--dm-rose-bg);
+  color: #fb7185;
+  border-color: rgba(244, 63, 94, 0.25);
+}
+.dm-btn-danger:hover {
+  background: rgba(244, 63, 94, 0.18);
+}
+
+/* Inputs & Form Controls */
+.dm-input, .dm-select {
+  background: var(--dm-surface-sunken);
+  border: 1px solid var(--dm-border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--dm-text-1);
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  padding: 7px 11px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.dm-input:focus, .dm-select:focus {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Clean Tag (Strict, understated) */
+.dm-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 1px 7px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.01em;
+}
+
+.dm-tag-invoice { background: var(--dm-emerald-bg); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
+.dm-tag-contract { background: var(--dm-amber-bg); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.2); }
+.dm-tag-resume { background: var(--dm-blue-bg); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+.dm-tag-general { background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border: 1px solid var(--dm-border-hairline); }
+
+/* Table */
+.dm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.815rem;
+}
+
+.dm-table th {
+  text-align: left;
+  padding: 9px 16px;
+  font-weight: 500;
+  color: var(--dm-text-4);
+  background: var(--dm-surface-0);
+  border-bottom: 1px solid var(--dm-border-hairline);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dm-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--dm-border-hairline);
+  color: var(--dm-text-2);
+}
+
+.dm-table tr:hover td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Tabular numbers */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.14s ease-out forwards;
+}
